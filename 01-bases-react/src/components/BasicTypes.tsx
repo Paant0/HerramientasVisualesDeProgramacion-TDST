@@ -42,7 +42,7 @@ export const BasicTypes = () => {
     }
     
 
->Modificar</button>
+>{isActive?"Desactivar": "Activar"} Usuario</button>
 
     </>
   )
