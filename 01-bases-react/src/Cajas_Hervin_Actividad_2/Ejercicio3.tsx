@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 export const Ejercicio3 = () => {
     const [query, setQuery] = useState("Valor inicial");
-    
+
     return (
         <>
 
