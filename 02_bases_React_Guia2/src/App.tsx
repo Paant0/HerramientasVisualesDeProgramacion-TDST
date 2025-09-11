@@ -3,13 +3,16 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { BasicTypes } from './Components/BasicTypes'
+import { Products } from './Components/Products'
+
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <BasicTypes/>
+      
+      <Products />
     </>
   )
 }
