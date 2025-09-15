@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { BasicTypes } from './Components/BasicTypes'
 import { Products } from './Components/Products'
+import { Cajas_Hervin_UtilesEscolares } from './Components/Cajas_Hervin_UtilesEscolares'
 
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
 
   return (
     <>
-      
+      <Cajas_Hervin_UtilesEscolares/>
       <Products />
     </>
   )
