@@ -49,6 +49,18 @@ export const BasicTypes = () => {
   }
 
 
+  const usuario = {
+    //llave : valor
+    name: "juanito alimaña",
+    edad: 19,
+    email: "juan@gmail.com",
+    role: "ejecutivo",
+    marialStatus: "soltero",
+    isActive: true
+  }
+
+  const llaves = Object.keys(usuario);
+
   return (
     <>
       <div>Hola Mundo</div>
@@ -76,7 +88,6 @@ export const BasicTypes = () => {
         </div>
 
       )}
-
       <ul>
         {users.map(
           (value, index) => <div key={index}>
@@ -91,8 +102,24 @@ export const BasicTypes = () => {
         }
       </ul>
 
+=======
+
+
+      {mascotas.join(", ")
+
+      }
+
+      //<h2>Objetos literales</h2>
+      //console.log({llaves});
+      
+      <h2>Objetos literales</h2>
+      <ul>
+        {llaves.map((keyName, index) =>
+          <li key={index}>
+            <b>{keyName}:</b> {usuario[keyName as keyof typeof usuario]}
+          </li>
+        )}
+      </ul>
     </>
-
-
   )
-}
+} 
