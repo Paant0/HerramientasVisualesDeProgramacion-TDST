@@ -113,6 +113,7 @@ export const BasicTypes = () => {
       //console.log({llaves});
       
       <h2>Objetos literales</h2>
+
       <ul>
         {llaves.map((keyName, index) =>
           <li key={index}>
@@ -120,6 +121,10 @@ export const BasicTypes = () => {
           </li>
         )}
       </ul>
+
+      <div>console.log(llaves)</div>
+      
+      
     </>
   )
 } 
