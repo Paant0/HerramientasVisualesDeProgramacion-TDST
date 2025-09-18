@@ -1,0 +1,137 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    position: relative;
+    font-family: Arial, sans-serif;
+    background-color: rgb(0, 0, 0);
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+    padding: 10px 0;
+    text-align: center;
+    margin: 10px;
+
+}
+
+.producto {
+    border: 1px solid rgb(148, 56, 56);
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    width: 200px;
+    display: inline-block;
+    vertical-align: top;
+    background-color: #493b3b;
+}
+
+.producto img {
+    width: 90%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+
+}
+
+.producto1 {
+    border: 1px solid rgb(148, 56, 56);
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    width: 200px;
+    display: inline-block;
+    vertical-align: top;
+    background-color: #493b3b;
+}
+
+.producto1 img {
+    width: 90%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.producto2 {
+    border: 1px solid rgb(148, 56, 56);
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    width: 200px;
+    display: inline-block;
+    vertical-align: top;
+    background-color: #493b3b;
+}
+
+.producto2 img {
+    width: 90%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.producto3 {
+    border: 1px solid rgb(148, 56, 56);
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    width: 200px;
+    display: inline-block;
+    vertical-align: top;
+    background-color: #493b3b;
+}
+
+.producto3 img {
+    width: 90%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+button {
+    font-family: Arial, sans-serif;
+    background-color: rgb(148, 56, 56);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+button:hover {
+    background-color: rgb(107, 34, 34);
+    color: rgb(255, 255, 255);
+
+}
+
+.btn-carrito {
+    font-family: Arial, sans-serif;
+    background-color: rgb(148, 56, 56);
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+.btn-carrito:hover {
+    background-color: rgb(107, 34, 34);
+    color: black;
+}
