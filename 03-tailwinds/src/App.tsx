@@ -14,6 +14,7 @@ import type { Contact } from './/Gestor de Contactos con props, hooks personaliz
 
 // Importa el hook normalmente (sin type)
 import { useContacts } from './/Gestor de Contactos con props, hooks personalizados, listas tipadas e interfaces en React con TailwindCSS/useContacts'
+import { Parent } from './Cajas-Hervin_Prop Drilling con Props Tipadas/Parent'
 
 
 
@@ -29,12 +30,12 @@ function App() {
 
   return (
     <>
-      <div className="flex flex-col justify-center items-center h-svh w-svw">
+      {/*<div className="flex flex-col justify-center items-center h-svh w-svw">
         <h1 className="text-4xl mb-5 text-black">
           {/* <Counter />
           <BotonHover/>
           <List /> 
-          <TaskList />*/}
+          <TaskList />
           <div className="min-h-screen bg-gray-50 flex flex-col items-center p-6">
             <h1 className="text-2xl font-bold mb-4">Gestor de Contactos</h1>
             <ContactForm initialData={editing || undefined} onSubmit={handleSubmit} />
@@ -42,8 +43,9 @@ function App() {
           </div>
 
         </h1>
-      </div>
+      </div>*/}
 
+      <Parent />
     </>
   )
 }
