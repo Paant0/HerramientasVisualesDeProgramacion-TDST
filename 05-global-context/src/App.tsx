@@ -2,8 +2,8 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { ThemeProvider } from './Content/ThemeContext'
-import { MostrarContexto } from './Content/MostrarContexto'
+import { ThemeContext, ThemeProvider } from './Ejercicio1y2/ThemeContext'
+import { ThemeSwitcher } from './Ejercicio1y2/ThemeSwitcher'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <ThemeProvider>
-        <MostrarContexto/> 
+        <ThemeSwitcher/>
     </ThemeProvider>
     </>
   )

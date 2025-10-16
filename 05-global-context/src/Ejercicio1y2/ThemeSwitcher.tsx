@@ -1,7 +1,7 @@
 import React from 'react'
-import { useThemeContext } from './ThemeContext'
+import { useThemeContext } from './ThemeContext';
 
-export const MostrarContexto = () => {
+export const ThemeSwitcher = () => {
     const { tema, CambiarTema } = useThemeContext();
     React.useEffect(() => {
         document.body.style.margin = "0";
@@ -19,15 +19,21 @@ export const MostrarContexto = () => {
                 flexDirection: "column",
                 justifyContent: "center",
                 alignItems: "center",
-                transition: "all 0.3s ease-in-out",
+                transition: "all 0.5s ease-in-out",
             }}
         >
             <h1>Tema actual: {tema}</h1>
-            <button onClick={CambiarTema}>
+            <button onClick={CambiarTema}
+                style={{
+                    font: "Roboto",
+                    border: "2px",
+                    backgroundColor: tema === "light" ? "#000000ff" : "#ffffffff",
+                    color: tema === "light" ? "#ffffffff" : "#000000ff",
+                }
+                }>
                 Cambiar a {tema === "light" ? "oscuro" : "claro"}
             </button>
         </div>
     )
 
 }
-

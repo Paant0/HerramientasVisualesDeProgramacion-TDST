@@ -13,7 +13,6 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     const CambiarTema = () => {
         setTema(prev => (prev === "light" ? "dark" : "light"));
     };
-
     const value: ThemeState = { tema, CambiarTema };
     return (
         <ThemeContext.Provider
@@ -25,6 +24,5 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
       {children}
     </ThemeContext.Provider>
     )
-
 }
 export const useThemeContext = () => useContext(ThemeContext);
