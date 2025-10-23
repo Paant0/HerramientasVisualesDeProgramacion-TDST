@@ -5,6 +5,7 @@ interface Props {
     label: string;
     position?: "left" | "right";
     color: "red" | "blue";
+    backgroundColor:string;
     // Actions
     onPress?: () => void;
     onLongPress?: () => void;
@@ -15,6 +16,7 @@ export default function FAB({
     label,
     position = "right",
     color,
+    backgroundColor,
     onPress,
     onLongPress,
 }: Props
@@ -25,11 +27,12 @@ export default function FAB({
             position === "right" ? styles.positionRight : styles.positionLeft,
             color === "red" ? { color: "#be0000ff" } : { color: "#3f00d3ff" },
             pressed ? { opacity: 0.7 } : { opacity: 1 },
+            {backgroundColor: backgroundColor}
         ]}
             onPress={onPress}
             onLongPress={onLongPress}
         >
-            <Text style={{ color: "white", fontSize: 20 }}>{label}</Text>
+            <Text style={{ color: "black", fontSize: 20 }}>{label}</Text>
 
         </Pressable>
     )

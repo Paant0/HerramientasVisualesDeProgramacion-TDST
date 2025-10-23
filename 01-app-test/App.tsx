@@ -1,35 +1,81 @@
 import { StatusBar } from 'expo-status-bar';
-import { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { useEffect, useState } from 'react';
+import { Alert, StyleSheet, Text, View, ScrollView } from 'react-native';
 import FAB from './components/FAB';
+import { useCounter } from './components/UseCounter';
 
 export default function App() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0)
+  // const {count, onPress, onLongPress} = useCounter()
+  const [history, setHistory] = useState<number[]>([]);
+
+  useEffect(() => {
+    setHistory((prev) => [...prev, count]);
+  }, [count]);
 
   const incrementar = () => {
     if (count < 20) {
-      setCount(count + 1);
+      if (count < 20) {
+        setCount(count + 1)
+      };
     }
-  };
+  }
+
+  const CrearBotonAlertRESET = () =>
+    Alert.alert('Resetear', 'Acaso deseas resetar el contador de casualidad?', [
+      {
+        text: 'Confirmar',
+        onPress: () => {
+          setCount(0);
+          setHistory([]);
+        },
+        style: 'cancel',
+      },
+    ]);
+
   return (
-    <View style={styles.container}>
+    <View
+      style={styles.container}
+    >
       <Text style={styles.textHuge}>{count}</Text>
-      {/* <FAB
+      <Text style={{ color: '#FFFF' }}>Valor actual: {count}</Text>
+      <Text style={{ color: '#FFFF', fontSize: 18, marginBottom: 5 }}>
+        Historial de valores:
+      </Text>
+      <ScrollView
+        style={{ maxHeight: 150, marginBottom: 20 }}
+        contentContainerStyle={{ alignItems: 'center' }}
+      >
+        {history.map((val, index) => (
+          <Text key={index} style={{ color: '#aaa' }}>
+            {index + 1}. {val}
+          </Text>
+        ))}
+      </ScrollView>
+
+      <FAB
         label="+1"
-        onPress={() => {if (count < 20) setCount(count + 1);
-      }}
-      onLongPress={() => {
-        if (count < 20) setCount(count + 1);
-      }}
-      position="right"
-      color="#0400ffff"
-      /> */}
+        position="right"
+        color="blue"
+        backgroundColor='#3f00d3ff'
+        onPress={() => {
+          if (count < 20) setCount(count + 1);
+        }}
+        onLongPress={() => {
+
+        }}
+      />
+
       <FAB
         label="reset"
-        onPress={() => setCount(0)}
-        onLongPress={() => setCount(0)}
         position="left"
         color="red"
+        backgroundColor='#e21111ff'
+        onPress={() => {
+          setCount(0);
+          setHistory([]);
+        }}
+        onLongPress={CrearBotonAlertRESET}
       />
       <StatusBar style="auto" />
     </View>
@@ -39,17 +85,17 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#000000ff",
   },
   textHuge: {
     fontSize: 96,
     fontWeight: "bold",
-    color: "#000",
+    color: "#FFFF",
   },
-  redColor:{
-    color:"#e40000ff"
+  redColor: {
+    color: "#e40000ff"
   }
 
 });
