@@ -2,7 +2,7 @@ import React from 'react'
 import { createContext, useContext } from "react";
 
 
-interface LanguageState {
+interface IdiomState {
     language: "es" | "en";
     CambiarIdioma: () => void;
 }
