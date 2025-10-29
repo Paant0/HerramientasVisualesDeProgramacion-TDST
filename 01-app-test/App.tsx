@@ -5,8 +5,7 @@ import FAB from './components/FAB';
 import { useCounter } from './components/UseCounter';
 
 export default function App() {
-  const [count, setCount] = useState(0)
-  // const {count, onPress, onLongPress} = useCounter()
+  const { count, onPress, onLongPress } = useCounter();
   const [history, setHistory] = useState<number[]>([]);
 
   useEffect(() => {
@@ -15,23 +14,21 @@ export default function App() {
 
   const incrementar = () => {
     if (count < 20) {
-      if (count < 20) {
-        setCount(count + 1)
-      };
+      onPress();
     }
-  }
+  };
 
   const CrearBotonAlertRESET = () =>
-    Alert.alert('Resetear', 'Acaso deseas resetar el contador de casualidad?', [
-      {
-        text: 'Confirmar',
-        onPress: () => {
-          setCount(0);
-          setHistory([]);
-        },
-        style: 'cancel',
+  Alert.alert('Resetear', 'Acaso deseas resetear el contador de casualidad?', [
+    {
+      text: 'Confirmar',
+      onPress: () => {
+        onLongPress();
+        setHistory([]);
       },
-    ]);
+      style: 'cancel',
+    },
+  ]);
 
   return (
     <View
@@ -58,12 +55,8 @@ export default function App() {
         position="right"
         color="blue"
         backgroundColor='#3f00d3ff'
-        onPress={() => {
-          if (count < 20) setCount(count + 1);
-        }}
-        onLongPress={() => {
-
-        }}
+        onPress={onPress}
+        onLongPress={onLongPress}
       />
 
       <FAB
@@ -72,7 +65,7 @@ export default function App() {
         color="red"
         backgroundColor='#e21111ff'
         onPress={() => {
-          setCount(0);
+          CrearBotonAlertRESET
           setHistory([]);
         }}
         onLongPress={CrearBotonAlertRESET}
